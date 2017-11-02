@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="windows-1255">
+		<!-- angular.js -->
+        <script src="angular.js"></script>
+
+        <!-- bootstrap -->
+        <script src="bootstrap.js"></script>
+
+        <!-- controller -->
+        <script src="main.ctrl.js"></script>
+<compName>Insert compName here</compName>
+</head>
+<body>
+	<div ng-controller="MainCtrl as main1">
+            <h1>Coupon System</h1>
+            
+             <p>Get All Coupons:<br>
+                  <table border="1">
+                <tr style="background:lightblue">
+                    <th>INDEX</th>
+                    <th>Company Name</th>
+                    <th>PASSWORD</th>
+                    <th>EMAIL</th>
+                </tr>
+                <tr ng-repeat="c in main1.arr">
+                    <td>{{$index}}</td>
+                    <td>{{c.compName}}</td>
+                    <td>{{c.password}}</td>
+                    <td>{{c.email}}</td>
+                </tr>
+             </table>  
+             	<button ng-click="main1.getCompany()">Get Company</button>
+             </p>
+         
+            
+             <hr>
+             <p>Add Coupon:<br>
+             	<p> Company Name : <input type="text" ng-model="main1.newCompany.compName"> </p>
+             	<p> PASSWORD : <input type="text" ng-model="main1.newCompany.password"> </p>
+             	<p> Email : <input type="text" ng-model="main1.newCompany.email"> </p>
+             	<button ng-click="main1.createCompany()">Add Company</button>
+             </p>
+             
+             <p>Update Company1:<br>
+             	<p> ID to update: <input type="text" ng-model="main1.updateCompanyID"> </p>
+             	<p> Company Name : <input type="text" ng-model="main1.updateCompanyObj.compName"> </p>
+             	<p> PASSWORD : <input type="text" ng-model="main1.updateCompanyObj.password"> </p>
+             	<p> EMAIL : <input type="text" ng-model="main1.updateCompanyObj.email"> </p>
+             	<button ng-click="main1.updateCompany()">Update Company</button>
+             	<p>{{main1.updateCompanyObj}}</p>
+             	<p>{{main1.updateCompanyID}}</p>
+             </p>  
+				<hr>    
+             <p>Remove Company1:<br>
+             	<p> ID to remove: <input type="text" ng-model="main1.removeCompanyID"> </p>
+             	<button ng-click="main1.removeCompany()">Remove Company</button>
+        </div>
+	
+</body>
+</html>
