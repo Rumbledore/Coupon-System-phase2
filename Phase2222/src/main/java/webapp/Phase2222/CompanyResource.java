@@ -20,7 +20,7 @@ import facade.CouponSystemSingleton;
 @Path("/company")
 public class CompanyResource {
 	
-	@GET
+	/*@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Collection<Coupon> getCoupons(Company company) throws MyException
 	{
@@ -56,6 +56,6 @@ public class CompanyResource {
 			e.printStackTrace();
 		}
 		return false;
-	} 
+	} */
 }
 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1255">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<p style="margin-left: 2%">
+		NAME : <input type="text" ng-model="c.newCompany.compName" style="margin-left: 1.5%" placeholder="Company Name">
+	</p>
+	<p style="margin-left: 2%">
+		PASSWORD : <input type="password" ng-model="c.newCompany.password" placeholder="Company Password"> 
+	</p>
+	<p style="margin-left: 2%">
+		EMAIL : <input type="text" ng-model="c.newCompany.email" placeholder="Company Email"> 
+	</p>
+			<input type="button" value="Create" style="margin-left: 2%" ng-click="c.createCompany()" />
+		<br> <br>
+	<p ng-show="c.success" style="color: green; margin-left: 2%">Company
+		Successfully created!</p>
+	<p ng-show="c.failure" style="color: red; margin-left: 2%">Company
+		was NOT created!</p>
+</body>
+</html>

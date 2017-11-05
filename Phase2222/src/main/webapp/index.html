@@ -1,62 +1,43 @@
 <!DOCTYPE html>
+
 <html ng-app="myApp">
 <head>
-<meta charset="windows-1255">
-		<!-- angular.js -->
-        <script src="angular.js"></script>
+<script src="angular.js"></script>
+<script src="angular-ui-router.js"></script>
+<script src="bootstrap.js"></script>
+<script src="mock.srvc.js"></script>
+<script src="route.config.js"></script>
+<script src="createCompany.ctrl.js"></script>
+<script src="getCompanies.ctrl.js"></script>
 
-        <!-- bootstrap -->
-        <script src="bootstrap.js"></script>
+<title>Admin Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-        <!-- controller -->
-        <script src="main.ctrl.js"></script>
-<compName>Insert compName here</compName>
 </head>
 <body>
-	<div ng-controller="MainCtrl as main1">
-            <h1>Coupon System</h1>
-            
-             <p>Get All Coupons:<br>
-                  <table border="1">
-                <tr style="background:lightblue">
-                    <th>INDEX</th>
-                    <th>Company Name</th>
-                    <th>PASSWORD</th>
-                    <th>EMAIL</th>
-                </tr>
-                <tr ng-repeat="c in main1.arr">
-                    <td>{{$index}}</td>
-                    <td>{{c.compName}}</td>
-                    <td>{{c.password}}</td>
-                    <td>{{c.email}}</td>
-                </tr>
-             </table>  
-             	<button ng-click="main1.getCompany()">Get Company</button>
-             </p>
-         
-            
-             <hr>
-             <p>Add Coupon:<br>
-             	<p> Company Name : <input type="text" ng-model="main1.newCompany.compName"> </p>
-             	<p> PASSWORD : <input type="text" ng-model="main1.newCompany.password"> </p>
-             	<p> Email : <input type="text" ng-model="main1.newCompany.email"> </p>
-             	<button ng-click="main1.createCompany()">Add Company</button>
-             </p>
-             
-             <p>Update Company1:<br>
-             	<p> ID to update: <input type="text" ng-model="main1.updateCompanyID"> </p>
-             	<p> Company Name : <input type="text" ng-model="main1.updateCompanyObj.compName"> </p>
-             	<p> PASSWORD : <input type="text" ng-model="main1.updateCompanyObj.password"> </p>
-             	<p> EMAIL : <input type="text" ng-model="main1.updateCompanyObj.email"> </p>
-             	<button ng-click="main1.updateCompany()">Update Company</button>
-             	<p>{{main1.updateCompanyObj}}</p>
-             	<p>{{main1.updateCompanyID}}</p>
-             </p>  
-				<hr>    
-             <p>Remove Company1:<br>
-             	<p> ID to remove: <input type="text" ng-model="main1.removeCompanyID"> </p>
-             	<button ng-click="main1.removeCompany()">Remove Company</button>
-        </div>
-	
+
+	<!-- Sidebar -->
+	<div class="w3-sidebar w3-light-grey w3-bar-block" style="width: 15%">
+		<h3 class="w3-bar-item">Menu</h3>
+
+		<a href="#/get" class="w3-bar-item w3-button">Get All Companies</a> 
+		<a href="#/create" class="w3-bar-item w3-button">Create Company</a> 
+		<a href="#" class="w3-bar-item w3-button">Log Out</a>
+	</div>
+
+	<!-- Page Content -->
+	<div style="margin-left: 15%">
+
+		<div class="w3-container w3-teal">
+
+			<h1>Welcome Administrator</h1>
+		</div>
+
+
+		<div ui-view></div>
+
+	</div>
+
 </body>
 </html>

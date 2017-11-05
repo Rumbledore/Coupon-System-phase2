@@ -1,2 +1,1 @@
-// boot strap command
-angular.module("myApp", []);
+angular.module("myApp", ["ui.router"]);

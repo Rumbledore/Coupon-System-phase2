@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1255">
+<title>Insert title here</title>
+</head>
+<body>
+<p>
+	<table border=1 style="margin-left: 2%">
+		<tr>
+			<th>Name</th>
+			<th>Password</th>
+			<th>Email</th>
+		<tr>
+		<tr ng-repeat="c in g.companies">
+			<td>{{c.compName}}</td>
+			<td>{{c.password}}</td>
+			<td>{{c.email}}</td>
+		</tr>
+	</table>
+	<p/>
+</body>
+</html>

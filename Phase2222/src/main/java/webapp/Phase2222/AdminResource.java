@@ -45,17 +45,11 @@ public class AdminResource {
 	@Path("/company")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void createCompany(Company c) {
-		AdminFacade adminFacade;
-		try {
-			adminFacade = (AdminFacade) CouponSystemSingleton.getInstance().login("admin", "1234", ClientType.ADMIN);
+	public void createCompany(Company c) throws MyException {
+		AdminFacade adminFacade = (AdminFacade) CouponSystemSingleton.getInstance().login("admin", "1234",
+				ClientType.ADMIN);
 
-			adminFacade.createCompany(c);
-		} catch (MyException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		adminFacade.createCompany(c);
 		System.out.println("created!");
 	}
 
@@ -80,7 +74,7 @@ public class AdminResource {
 		System.out.println("updated!");
 	}
 
-	// NOW CUSTOMER FUNCTION IN ADMINFACADER
+	// NOW CUSTOMER FUNCTION IN ADMINFACADE
 	@Path("/customer")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -104,16 +98,11 @@ public class AdminResource {
 	@Path("/customer")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void createCustomer(Customer c) {
-		AdminFacade adminFacade;
-		try {
-			adminFacade = (AdminFacade) CouponSystemSingleton.getInstance().login("admin", "1234", ClientType.ADMIN);
+	public void createCustomer(Customer c) throws MyException {
+		AdminFacade adminFacade = (AdminFacade) CouponSystemSingleton.getInstance().login("admin", "1234",
+				ClientType.ADMIN);
 
-			adminFacade.createCustomer(c);
-		} catch (MyException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		adminFacade.createCustomer(c);
 
 		System.out.println("created!");
 	}
